@@ -50,5 +50,14 @@ public class Matrix {
     }
   }
 
-
+  public void flipMatrix() { // Swap elements along the diagonal from top right to bottom left, leaving the highlighted elements not swapped //
+    int value = 1;
+    for (int row = 0; row < matrix.length / 2; row++) {
+      for (int col = 0; col < matrix[row].length / 2; col++) {
+        if (row + col < matrix.length - value) {
+          swap(row, col, matrix.length - value - col, matrix.length - value - row);
+        }
+      }
+    }
+  }
 }
