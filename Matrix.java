@@ -41,4 +41,14 @@ public class Matrix {
     }
   }
 
+  public void populateMatrix() { // Populates the matrix with values from 1 to size * size //
+    int value = 1;
+    for (int row = 0; row < matrix.length; row++) {
+      for (int col = 0; col < matrix[row].length; col++) {
+        matrix[row][col] = value++;
+      }
+    }
+  }
+
+
 }
