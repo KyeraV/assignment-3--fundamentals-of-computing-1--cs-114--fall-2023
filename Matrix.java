@@ -18,4 +18,27 @@ public class Matrix {
     System.out.println("Matrix dimensions: " + size + " x " + size);
   }
 
+  private void swap(int x1, int y1, int x2, int y2) { // Swaps the two elements in the matrix //
+    int temp = matrix[x1][y1];
+    matrix[x1][y1] = matrix[x2][y2];
+    matrix[x2][y2] = temp;
+  }
+
+  public void printMatrix() { // Highlight diagonal (top right, bottom left) elements in yellow //
+    int maxDigits = String.valueOf(matrix.length * matrix.length).length();
+
+    for (int row = 0; row < matrix.length; row++) {
+      for (int col = 0; col < matrix[row].length; col++) {
+        if (row + col == matrix.length - 1) {
+          String formattedvalue = String.format("%" + (maxDigits + 1) + "s", matrix[row][col]);
+          System.out.print("\033[43m" + formattedvalue + "\033[0m ");
+        } else {
+          String formattedvalue = String.format("%" + (maxDigits + 1) + "s", matrix[row][col]);
+          System.out.print(formattedvalue + " ");
+        }
+      }
+      System.out.println();
+    }
+  }
+
 }
