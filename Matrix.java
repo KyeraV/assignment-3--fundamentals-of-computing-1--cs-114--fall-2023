@@ -11,4 +11,11 @@ the matrix. Next, create the flipMatrix public method, which takes no parameters
 The values of the matrix should be "flipped" from top right to bottom left along the diagonal.
 The diagonal's constituent parts ought to be highlighted rather than switched. */
 public class Matrix {
+  private int[][] matrix;
+
+  public Matrix(int size) {
+    matrix = new int[size][size];
+    System.out.println("Matrix dimensions: " + size + " x " + size);
+  }
+
 }
